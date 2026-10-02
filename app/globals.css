@@ -2,20 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* ---- Surface: warm bone paper, not grey ---- */
+    --paper: 36 40% 97%; /* #FAF7F4 */
+    --paper-raised: 34 30% 94%; /* #F4F0EB */
+
+    /* ---- Ink: warm near-black with three text weights ---- */
+    --ink: 22 16% 11%; /* #201D17 */
+    --ink-muted: 24 8% 42%; /* #736A62 */
+    --ink-faint: 30 6% 58%; /* #9A948D */
+
+    /* ---- Hairlines ---- */
+    --rule: 28 20% 87%; /* #E4DDD7 */
+    --rule-strong: 24 14% 78%; /* #C4BDB4 */
+
+    /* ---- Brand: vermilion, the only saturated colour on the page ---- */
+    --brand: 16 86% 54%; /* #EF5B23 */
+    --brand-deep: 14 84% 43%; /* #CA3C11 */
+    --brand-wash: 28 90% 95%; /* #FDEDE7 */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--rule));
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--paper));
+    color: hsl(var(--ink));
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "cv05" 1, "ss03" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Sticky header height + breathing room for anchored sections */
+  section[id] {
+    scroll-margin-top: 6.5rem;
+  }
+
+  ::selection {
+    background-color: hsl(var(--brand) / 0.22);
+    color: hsl(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--brand));
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  /* Instrument Serif has no true italic — synthesising it looks broken,
+     so keep display italics to short accents only. */
+}
+
+@layer components {
+  /* Uppercase mono label used for section indices and eyebrows */
+  .label {
+    @apply font-mono text-2xs font-medium uppercase tracking-micro text-ink-faint;
+  }
+
+  /* Section index: mono numeral + hairline, sits above a heading */
+  .index {
+    @apply flex items-center gap-3 font-mono text-2xs font-medium uppercase tracking-micro text-ink-faint;
+  }
+
+  .index::after {
+    content: "";
+    @apply h-px flex-1 bg-rule;
+  }
+
+  /* Underline that sweeps in from the left on hover */
+  .sweep {
+    @apply relative inline-block;
+  }
+
+  .sweep::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-500 ease-editorial;
+  }
+
+  .sweep:hover::after,
+  .sweep:focus-visible::after {
+    @apply scale-x-100;
+  }
+
+  /* Hairline page gutter wrapper */
+  .shell {
+    @apply mx-auto w-full max-w-[88rem] px-5 sm:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Tabular numerals keep the ticker and meta rows from shifting */
+  .nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
