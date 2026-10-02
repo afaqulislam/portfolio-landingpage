@@ -48,7 +48,8 @@ export default function OpengraphImage() {
               PORTFOLIO
             </div>
             <div style={{ fontSize: 30, color: "#201D17" }}>
-              afaqulislam.vercel.app
+              {/* Stripped of the scheme so the card shows a readable host */}
+              {profile.site.url.replace(/^https?:\/\//, "")}
             </div>
           </div>
         </div>

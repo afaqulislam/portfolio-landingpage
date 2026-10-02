@@ -3,7 +3,7 @@
   <h1>Afaq Ul Islam</h1>
   <p><strong>Full-Stack &amp; AI Engineer</strong> — Co-Founder &amp; COO, Neofyx</p>
   <p>
-    <a href="https://afaqulislam.vercel.app">Live site</a> ·
+    <a href="https://portfolio-landingpage-aui.vercel.app">Live site</a> ·
     <a href="mailto:afaqulislam707@gmail.com">Email</a> ·
     <a href="https://github.com/afaqulislam">GitHub</a> ·
     <a href="https://linkedin.com/in/afaqulislam">LinkedIn</a>

@@ -9,7 +9,7 @@ export const profile = {
   summary:
     "Full-stack and AI engineer building web applications, AI-powered automation, and SaaS products end to end. Co-Founder & COO at Neofyx, where I lead product engineering and client delivery.",
   site: {
-    url: "https://afaqulislam.vercel.app",
+    url: "https://portfolio-landingpage-aui.vercel.app",
   },
 } as const;
 
@@ -306,7 +306,7 @@ export const socials = [
   { label: "GitHub", href: "https://github.com/afaqulislam" },
   { label: "LinkedIn", href: "https://linkedin.com/in/afaqulislam" },
   { label: "X", href: "https://x.com/afaqulislam708" },
-  { label: "Live site", href: "https://afaqulislam.vercel.app" },
+  { label: "Live site", href: "https://portfolio-landingpage-aui.vercel.app" },
 ] as const;
 
 export const contact = {
