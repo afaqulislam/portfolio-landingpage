@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Afaq Ul Islam — animated mark">
+  <title>AUI</title>
+  <!--
+    Standalone animated mark for the README. GitHub strips inline CSS from
+    README markdown but renders a referenced SVG file, and CSS @keyframes
+    written here inside the file do play. Rings use a neutral grey so the mark
+    stays readable on both the light and the dark GitHub theme.
+  -->
+  <style>
+    .r1 {
+      fill: none;
+      stroke: #9A948D; stroke-opacity: .5; stroke-width: 1.5;
+      stroke-dasharray: 3 7;
+      transform-box: fill-box; transform-origin: center;
+      animation: aui-spin 46s linear infinite;
+    }
+    .r2 {
+      fill: none;
+      stroke: #9A948D; stroke-opacity: .32; stroke-width: 1.5;
+      transform-box: fill-box; transform-origin: center;
+      animation: aui-spin 31s linear infinite reverse;
+    }
+    .r3 {
+      fill: none;
+      stroke: #9A948D; stroke-opacity: .22; stroke-width: 1.5;
+    }
+    .drift {
+      transform-box: fill-box; transform-origin: center;
+      animation: aui-drift 7s cubic-bezier(.45, 0, .55, 1) infinite;
+    }
+    .tile {
+      transform-box: fill-box; transform-origin: center;
+      animation: aui-spin 14s linear infinite;
+    }
+    .glyphs {
+      transform-box: fill-box; transform-origin: center;
+      animation: aui-rise 3.6s cubic-bezier(.4, 0, .6, 1) infinite;
+    }
+    .ga { animation: aui-glyph 3.6s cubic-bezier(.4, 0, .6, 1) infinite -.12s; }
+    .gu { animation: aui-glyph 3.6s cubic-bezier(.4, 0, .6, 1) infinite -.24s; }
+    .gi { animation: aui-glyph 3.6s cubic-bezier(.4, 0, .6, 1) infinite -.36s; }
+
+    @keyframes aui-spin  { from { transform: rotate(0); }      to { transform: rotate(360deg); } }
+    @keyframes aui-drift { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(4deg); } }
+    @keyframes aui-rise  { 0%, 100% { transform: scale(1); }    50% { transform: scale(1.045); } }
+    @keyframes aui-glyph { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.4px); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .r1, .r2, .drift, .tile, .glyphs, .ga, .gu, .gi { animation: none; }
+    }
+  </style>
+
+  <!-- Registration rings -->
+  <circle class="r1" cx="128" cy="128" r="118" />
+  <circle class="r2" cx="128" cy="128" r="96" />
+  <circle class="r3" cx="128" cy="128" r="74" />
+
+  <!-- Brand mark -->
+  <g class="drift">
+    <g transform="translate(128 128) scale(2.1) translate(-32 -32)">
+      <rect class="tile" width="64" height="64" fill="#EF5B23"/>
+      <g class="glyphs" fill="#FAF7F4">
+        <path class="ga" fill-rule="evenodd" d="M13.75 46 20.2 15h2.1l6.45 31H13.75Zm4-8h7l-3.5-9.5L17.75 38Z"/>
+        <path class="gu" d="M31.25 15h4.5v24.5a2 2 0 0 0 4 0V15h4.5v24.5a6.5 6.5 0 0 1-13 0V15Z"/>
+        <path class="gi" d="M45.75 24h4.5v22h-4.5V24Zm0-9h4.5v4.5h-4.5V15Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

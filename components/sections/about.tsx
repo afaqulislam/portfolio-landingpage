@@ -30,20 +30,33 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
-            {/* Monogram plate — the brand mark instead of a stock portrait */}
-            <figure className="border border-ink bg-paper">
-              <div className="flex aspect-[4/5] items-center justify-center overflow-hidden bg-brand-wash">
-                <BrandMark className="w-1/2 max-w-[13rem] text-brand" />
+            {/* Free-floating animated mark. No plate, no frame, no caption — the
+                motion carries it instead of a box. */}
+            <div className="relative mx-auto aspect-square w-56 lg:w-full">
+              {/* Concentric guide rings, like a registration target */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full border border-dashed border-rule-strong/60 motion-safe:animate-mark-spin"
+                style={{ animationDuration: "34s" }}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-[14%] rounded-full border border-rule-strong/40"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-[28%] rounded-full border border-rule/70"
+              />
+
+              {/* Brand mark, breathing and drifting continuously */}
+              <div className="absolute inset-0 flex items-center justify-center motion-safe:animate-mark-drift">
+                <BrandMark className="w-[46%] text-brand" animate />
               </div>
-              <figcaption className="flex items-center justify-between border-t border-ink px-4 py-3">
-                <span className="font-mono text-2xs uppercase tracking-micro text-ink-muted">
-                  Portrait withheld
-                </span>
-                <span className="font-mono text-2xs uppercase tracking-micro text-ink-faint nums">
-                  Fig. 01
-                </span>
-              </figcaption>
-            </figure>
+            </div>
+
+            <p className="mt-6 text-center font-mono text-2xs uppercase tracking-micro text-ink-faint lg:text-left">
+              Mark, not a portrait
+            </p>
 
             <dl className="mt-8 border-t border-rule">
               {about.facts.map((fact) => (

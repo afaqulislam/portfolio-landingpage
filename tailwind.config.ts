@@ -68,6 +68,33 @@ const config: Config = {
           from: { transform: "translate3d(0,0,0)" },
           to: { transform: "translate3d(4px,-4px,0)" },
         },
+        /* Continuous brand animation: the tile turns, the glyphs stay upright
+           and breathe on a staggered loop. */
+        "mark-spin": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "mark-rise": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.045)" },
+        },
+        "glyph-a": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-1.6px)" },
+        },
+        "glyph-u": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-1.6px)" },
+        },
+        "glyph-i": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-1.6px)" },
+        },
+        /* Continuous orbit used by the About mark plate. */
+        "mark-drift": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          "50%": { transform: "translate3d(0, -10px, 0) rotate(4deg)" },
+        },
       },
       animation: {
         ticker: "ticker-scroll var(--ticker-duration, 48s) linear infinite",
@@ -75,6 +102,12 @@ const config: Config = {
         "fade-in": "fade-in 0.9s ease both",
         "pulse-dot": "pulse-dot 2.4s cubic-bezier(0.4,0,0.6,1) infinite",
         "arrow-nudge": "arrow-nudge 0.35s cubic-bezier(0.22,1,0.36,1)",
+        "mark-spin": "mark-spin 14s linear infinite",
+        "mark-rise": "mark-rise 3.6s cubic-bezier(0.4,0,0.6,1) infinite",
+        "glyph-a": "glyph-a 3.6s cubic-bezier(0.4,0,0.6,1) infinite",
+        "glyph-u": "glyph-u 3.6s cubic-bezier(0.4,0,0.6,1) infinite",
+        "glyph-i": "glyph-i 3.6s cubic-bezier(0.4,0,0.6,1) infinite",
+        "mark-drift": "mark-drift 7s cubic-bezier(0.45,0,0.55,1) infinite",
       },
     },
   },
