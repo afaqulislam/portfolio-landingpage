@@ -51,8 +51,10 @@ Three decisions shape the whole build:
    `fonts.gstatic.com`, no render-blocking round trip, and `npm run build` works offline.
 2. **No backend.** The contact section is information only — `mailto:` and `tel:` links.
    The page is a static export with no environment variables and no credentials.
-3. **Almost no dependencies.** Runtime is `next`, `react`, `react-dom`. Nothing else — no
-   component library, no icon package, no state manager, no analytics.
+3. **Almost no dependencies.** Runtime is `next`, `react`, `react-dom` and
+   `react-fast-marquee` — the one library bought in, because it closes the ticker loop
+   without the seam a hand-rolled track leaves. No component library, no icon package, no
+   state manager, no analytics.
 
 ## Design system
 
@@ -103,6 +105,7 @@ Recognition section, which share the same palette treatment.
 | Styling | Tailwind CSS 3 over CSS custom properties |
 | Linting | ESLint 8 with `eslint-config-next` |
 | Icons | Hand-written SVG — no icon package |
+| Ticker | `react-fast-marquee` (autoFill, pause on hover) |
 | Fonts | 7 self-hosted WOFF2 files |
 
 ## Project structure
@@ -168,20 +171,35 @@ everywhere.
 
 ## Engineering notes
 
+**Ticker.** The technology band scrolls with `react-fast-marquee`. The first pass doubled
+the list by hand and slid it `-50%`, which only lines up if the copy is exactly half the
+track — rounding put a visible gap at the seam on every loop. `autoFill` measures the
+children and repeats them instead, so the loop closes cleanly. `speed` is px/s, not a
+duration, so the rate does not drift with viewport width, and it pauses on hover.
+
+The library has no reduced-motion handling of its own, so `play` is driven from a
+`matchMedia` hook. Under `prefers-reduced-motion` the band swaps to the same list laid
+out in full — readable, not clipped.
+
+The component returns `null` until it has measured itself, so it renders nothing on the
+server. Until it mounts the band carries a one-line stand-in at the same 16 px as the
+marquee track: the height is reserved before the swap, so the page never moves. All
+sixteen items are still in the HTML — only the overflow is clipped.
+
 **Static output.** One route, prerendered. First-load JS is roughly 105 kB, nearly all of
 it the React runtime.
 
-**Accessible.** Skip link, semantic landmarks, visible focus rings, an `aria-hidden`
-marquee with a readable static fallback, and a `prefers-reduced-motion` block that
-neutralises animation and transitions. The animated mark and README SVG both honour the
-same preference.
+**Accessible.** Skip link, semantic landmarks, visible focus rings, a labelled
+`role="marquee"` band with a readable static fallback, and a `prefers-reduced-motion`
+block that neutralises animation and transitions. The animated mark and README SVG both
+honour the same preference.
 
 **SEO.** Full Open Graph and Twitter cards, canonical URL, `robots` directives, and
 JSON-LD `Person` schema. The social card is generated from the same palette as the site.
 
 **Dead code removed.** The starter shipped `components/ui`, `lib/utils`, the `public`
 folder and a shadcn dependency tree — six packages supporting a single button. The button
-is now plain markup and runtime dependencies number three.
+is now plain markup and runtime dependencies number four.
 
 ## Deploying
 

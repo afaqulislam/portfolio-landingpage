@@ -48,10 +48,6 @@ const config: Config = {
         editorial: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       keyframes: {
-        "ticker-scroll": {
-          from: { transform: "translate3d(0,0,0)" },
-          to: { transform: "translate3d(-50%,0,0)" },
-        },
         "rise-in": {
           from: { opacity: "0", transform: "translate3d(0, 14px, 0)" },
           to: { opacity: "1", transform: "translate3d(0,0,0)" },
@@ -97,7 +93,6 @@ const config: Config = {
         },
       },
       animation: {
-        ticker: "ticker-scroll var(--ticker-duration, 48s) linear infinite",
         "rise-in": "rise-in 0.7s cubic-bezier(0.22,1,0.36,1) both",
         "fade-in": "fade-in 0.9s ease both",
         "pulse-dot": "pulse-dot 2.4s cubic-bezier(0.4,0,0.6,1) infinite",
