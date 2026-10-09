@@ -51,7 +51,7 @@ Three decisions shape the whole build:
    committed as WOFF2 and loaded through `next/font/local`. No request to
    `fonts.gstatic.com`, no render-blocking round trip, and `npm run build` works offline.
 2. **No backend.** The contact section is information only — `mailto:` and `tel:` links.
-   The page is a static export with no environment variables and no credentials.
+   The page is statically prerendered with no environment variables and no credentials.
 3. **Almost no dependencies.** Runtime is `next`, `react`, `react-dom` and
    `react-fast-marquee` — the one library bought in, because it closes the ticker loop
    without the seam a hand-rolled track leaves. No component library, no icon package, no
@@ -87,7 +87,7 @@ the About mark drifts inside a slowly turning registration target.
 
 | # | Section | Contents |
 | :-: | :--- | :--- |
-| 01 | Work | Ten projects with stack, period and outcome |
+| 01 | Work | Ten projects with stack, period, outcome and repository / live links |
 | 02 | About | Long-form bio, fact table, animated mark |
 | 03 | Capabilities | Grouped capabilities across four columns |
 | 04 | Track | Roles and education |
