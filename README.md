@@ -38,6 +38,7 @@ photography, no UI kit, no contact form.
 - [Editing content](#editing-content)
 - [Engineering notes](#engineering-notes)
 - [Deploying](#deploying)
+- [Licence](#licence)
 
 ## What it is
 
@@ -88,7 +89,7 @@ the About mark drifts inside a slowly turning registration target.
 | :-: | :--- | :--- |
 | 01 | Work | Ten projects with stack, period and outcome |
 | 02 | About | Long-form bio, fact table, animated mark |
-| 03 | Stack | Grouped capabilities across four columns |
+| 03 | Capabilities | Grouped capabilities across four columns |
 | 04 | Track | Roles and education |
 | 05 | Recognition | Competitions and programmes |
 | 06 | Contact | Email, phone, social links |
@@ -186,7 +187,7 @@ server. Until it mounts the band carries a one-line stand-in at the same 16 px a
 marquee track: the height is reserved before the swap, so the page never moves. All
 sixteen items are still in the HTML — only the overflow is clipped.
 
-**Static output.** One route, prerendered. First-load JS is roughly 105 kB, nearly all of
+**Static output.** One route, prerendered. First-load JS is roughly 107 kB, nearly all of
 it the React runtime.
 
 **Accessible.** Skip link, semantic landmarks, visible focus rings, a labelled
