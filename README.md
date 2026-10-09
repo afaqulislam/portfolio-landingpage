@@ -2,60 +2,50 @@
   <img src="./assets/aui-animated.svg" width="248" alt="AUI — animated mark" />
   <h1>Afaq Ul Islam</h1>
   <p><strong>Full-Stack &amp; AI Engineer</strong> &nbsp;·&nbsp; Co-Founder &amp; COO, Neofyx</p>
-  <p>
-    Web apps, AI agents, and the automation in between — designed, built and deployed end to end.
-  </p>
+  <p>Web apps, AI agents, and the automation in between — designed, built and deployed end to end.</p>
 </div>
 
 <div align="center">
 
-| Live site | Email | GitHub | LinkedIn |
-| :---: | :---: | :---: | :---: |
-| [portfolio-landingpage-aui.vercel.app](https://portfolio-landingpage-aui.vercel.app) | [afaqulislam707@gmail.com](mailto:afaqulislam707@gmail.com) | [@afaqulislam](https://github.com/afaqulislam) | [in/afaqulislam](https://linkedin.com/in/afaqulislam) |
+[Live site](https://portfolio-landingpage-aui.vercel.app) &nbsp;·&nbsp; [Email](mailto:afaqulislam707@gmail.com) &nbsp;·&nbsp; [GitHub](https://github.com/afaqulislam) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/afaqulislam)
 
 </div>
 
 ---
 
-An editorial portfolio built with **Next.js 15**, **React 19** and **Tailwind CSS** — warm
-paper surfaces, one vermilion accent, hairline rules, square corners. No template, no stock
-photography, no UI kit, no contact form.
+An editorial portfolio built with **Next.js 15**, **React 19** and **Tailwind CSS** — warm paper
+surfaces, a single vermilion accent, hairline rules and square corners. No template, no stock
+photography and no UI kit.
 
-<div align="center">
-
-`Next.js 15.5` `React 19` `TypeScript` `Tailwind 3` `ESLint 8`
-
-</div>
+`Next.js 15.5` &nbsp;·&nbsp; `React 19` &nbsp;·&nbsp; `TypeScript` &nbsp;·&nbsp; `Tailwind 3` &nbsp;·&nbsp; `ESLint 8`
 
 ## Contents
 
-- [What it is](#what-it-is)
+- [Overview](#overview)
 - [Design system](#design-system)
 - [Sections](#sections)
-- [Stack](#stack)
+- [Built with](#built-with)
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Editing content](#editing-content)
-- [Engineering notes](#engineering-notes)
-- [Deploying](#deploying)
+- [Implementation notes](#implementation-notes)
+- [Deployment](#deployment)
 - [Licence](#licence)
 
-## What it is
+## Overview
 
-A single static page carrying the work. Every section is built from real content held in
-one file, so the site can be rewritten without touching a component.
+A single-page portfolio, statically prerendered, with every word, project, date and link held
+in one content file. The site can be rewritten end to end without touching a component.
 
-Three decisions shape the whole build:
+Three principles shape the build:
 
-1. **Self-hosted fonts.** Instrument Serif, Instrument Sans and JetBrains Mono are
-   committed as WOFF2 and loaded through `next/font/local`. No request to
-   `fonts.gstatic.com`, no render-blocking round trip, and `npm run build` works offline.
-2. **No backend.** The contact section is information only — `mailto:` and `tel:` links.
-   The page is statically prerendered with no environment variables and no credentials.
-3. **Almost no dependencies.** Runtime is `next`, `react`, `react-dom` and
-   `react-fast-marquee` — the one library bought in, because it closes the ticker loop
-   without the seam a hand-rolled track leaves. No component library, no icon package, no
-   state manager, no analytics.
+- **Self-hosted fonts.** Instrument Serif, Instrument Sans and JetBrains Mono are committed as
+  WOFF2 and loaded through `next/font/local`, so there is no render-blocking request to a font
+  CDN and `npm run build` works offline.
+- **No backend.** The contact section is information only — `mailto:` and `tel:` links. The
+  page ships as a static prerender with no environment variables and no credentials.
+- **Minimal dependencies.** The runtime is `next`, `react`, `react-dom` and
+  `react-fast-marquee`. No component library, no icon package, no state manager, no analytics.
 
 ## Design system
 
@@ -74,14 +64,14 @@ One palette, applied consistently. Vermilion is the only saturated colour on the
 | `--brand-deep` | `#CA3C11` | Accent hover |
 | `--brand-wash` | `#FDEDE7` | Accent tint |
 
-**Type.** Instrument Serif for display, Instrument Sans for body, JetBrains Mono for
-indices and metadata. Corners are square throughout. Section indices are mono numerals
-followed by a rule that fills the remaining width, and links carry an accent underline
-that sweeps in from the left.
+**Typography.** Instrument Serif for display, Instrument Sans for body and JetBrains Mono for
+indices and metadata. Corners are square throughout, section indices are mono numerals
+followed by a rule that fills the remaining width, and links carry an accent underline that
+sweeps in from the left.
 
-**Motion is continuous, not decorative.** The stack ticker scrolls indefinitely, the brand
-mark's tile rotates beneath glyphs that stay upright and breathe on a staggered loop, and
-the About mark drifts inside a slowly turning registration target.
+**Motion.** The stack ticker scrolls continuously, the brand mark's tile rotates beneath
+upright glyphs that breathe on a staggered loop, and the About mark drifts inside a slowly
+turning registration target. Every animation is disabled under `prefers-reduced-motion`.
 
 ## Sections
 
@@ -92,21 +82,21 @@ the About mark drifts inside a slowly turning registration target.
 | 03 | Capabilities | Grouped capabilities across four columns |
 | 04 | Track | Roles and education |
 | 05 | Recognition | Competitions and programmes |
-| 06 | Contact | Email, phone, social links |
+| 06 | Contact | Email, phone and social links |
 
-Two bands run full-bleed on the ink colour: the technology ticker under the hero and the
-Recognition section, which share the same palette treatment.
+Two bands run full-bleed on the ink colour — the technology ticker beneath the hero and the
+Recognition section — and share the same palette treatment.
 
-## Stack
+## Built with
 
 | Layer | Used for |
 | :--- | :--- |
 | Framework | Next.js 15 (App Router), React 19 |
-| Language | TypeScript, strict |
+| Language | TypeScript (strict) |
 | Styling | Tailwind CSS 3 over CSS custom properties |
 | Linting | ESLint 8 with `eslint-config-next` |
-| Icons | Hand-written SVG — no icon package |
-| Ticker | `react-fast-marquee` (autoFill, pause on hover) |
+| Icons | Hand-written SVG |
+| Ticker | `react-fast-marquee` |
 | Fonts | 7 self-hosted WOFF2 files |
 
 ## Project structure
@@ -156,7 +146,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run dev` | Development server with Turbopack |
 | `npm run build` | Production build |
 | `npm run start` | Serve the production build |
-| `npm run lint` | ESLint over `app`, `components`, `lib` |
+| `npm run lint` | ESLint over `app`, `components` and `lib` |
 
 ## Editing content
 
@@ -178,49 +168,32 @@ The live domain is `profile.site.url` in the same file. Canonical, Open Graph, T
 JSON-LD and the social card all derive from it, so changing it in one place updates
 everywhere.
 
-## Engineering notes
+## Implementation notes
 
-**Ticker.** The technology band scrolls with `react-fast-marquee`. The first pass doubled
-the list by hand and slid it `-50%`, which only lines up if the copy is exactly half the
-track — rounding put a visible gap at the seam on every loop. `autoFill` measures the
-children and repeats them instead, so the loop closes cleanly. `speed` is px/s, not a
-duration, so the rate does not drift with viewport width, and it pauses on hover.
+**Ticker.** The technology band scrolls with `react-fast-marquee`, which measures its
+children and repeats them so the loop closes without a seam. Scroll speed is a rate in px/s
+rather than a duration, so it does not drift with viewport width, and it pauses on hover.
+Because the library has no reduced-motion handling of its own, playback is driven from a
+`matchMedia` hook — under `prefers-reduced-motion` the band swaps to the full, readable list.
+The component renders nothing until it has measured itself, so a height-matched stand-in holds
+the track's space before hydration and the layout never shifts.
 
-The library has no reduced-motion handling of its own, so `play` is driven from a
-`matchMedia` hook. Under `prefers-reduced-motion` the band swaps to the same list laid
-out in full — readable, not clipped.
+**Performance.** The page is prerendered as a single static route, with a first-load JS of
+roughly 107 kB, almost all of it the React runtime.
 
-The component returns `null` until it has measured itself, so it renders nothing on the
-server. Until it mounts the band carries a one-line stand-in at the same 16 px as the
-marquee track: the height is reserved before the swap, so the page never moves. All
-sixteen items are still in the HTML — only the overflow is clipped.
+**Accessibility.** A skip link, semantic landmarks, visible focus rings, a labelled
+`role="marquee"` band with a readable static fallback, and a `prefers-reduced-motion` block
+that neutralises animation and transitions.
 
-**Static output.** One route, prerendered. First-load JS is roughly 107 kB, nearly all of
-it the React runtime.
+**SEO.** Full Open Graph and Twitter cards, a canonical URL, `robots` directives and JSON-LD
+`Person` schema. The social card is generated at build time from the same palette as the site.
 
-**Accessible.** Skip link, semantic landmarks, visible focus rings, a labelled
-`role="marquee"` band with a readable static fallback, and a `prefers-reduced-motion`
-block that neutralises animation and transitions. The animated mark and README SVG both
-honour the same preference.
+## Deployment
 
-**SEO.** Full Open Graph and Twitter cards, canonical URL, `robots` directives, and
-JSON-LD `Person` schema. The social card is generated from the same palette as the site.
-
-**Dead code removed.** The starter shipped `components/ui`, `lib/utils`, the `public`
-folder and a shadcn dependency tree — six packages supporting a single button. The button
-is now plain markup and runtime dependencies number four.
-
-## Deploying
-
-Import the repository at [vercel.com/new](https://vercel.com/new). Nothing to configure:
-no environment variables, no custom build command, `npm run build` is the default.
-
-The page also exports cleanly to any static host.
+Import the repository at [vercel.com/new](https://vercel.com/new). Nothing to configure — no
+environment variables, no custom build command; `npm run build` is the default. The output is
+static and deploys to any static host.
 
 ## Licence
 
 Code released for reference. Content and personal details are the author's own.
-
-<div align="center">
-  <sub>AUI · Karachi, Pakistan</sub>
-</div>
