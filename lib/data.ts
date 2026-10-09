@@ -55,7 +55,8 @@ export type Project = {
   blurb: string;
   stack: readonly string[];
   metric: string;
-  href?: string;
+  repo: string;
+  live?: string;
 };
 
 export const projects: readonly Project[] = [
@@ -67,6 +68,8 @@ export const projects: readonly Project[] = [
       "A crop disease detector for Pakistani farmers, built on Google Gemini Vision and deployed to Google Cloud Run. Photograph a leaf, get a diagnosis and a treatment note — aimed at growers who have never opened a farming app before.",
     stack: ["Gemini Vision", "Google Cloud Run", "Python"],
     metric: "Silver Tier · AI Seekho 2026",
+    repo: "https://github.com/afaqulislam/kisaan-dost-ai",
+    live: "https://kisaan-dost-ai-1055174968017.asia-southeast1.run.app/",
   },
   {
     index: "02",
@@ -76,78 +79,96 @@ export const projects: readonly Project[] = [
       "Paste a screenshot of any conversation and get back a prioritised, deadline-aware task list. Groq does the extraction with Gemini as fallback, so a slow provider degrades the answer instead of breaking the flow.",
     stack: ["Next.js 16", "React 19", "TypeScript", "Groq", "Tailwind v4"],
     metric: "Chai aur Code · GDG Live Pakistan",
+    repo: "https://github.com/afaqulislam/tasksnap-ai",
+    live: "https://tasksnapai-aui.vercel.app",
   },
   {
     index: "03",
-    title: "CIRO AI",
-    period: "2026",
-    blurb:
-      "A multi-agent crisis response system where specialised agents coordinate triage, communication, and resource routing instead of one model trying to do everything. Built with a team for AI Seekho Phase 2.",
-    stack: ["Multi-agent", "OpenAI Agents SDK", "Python"],
-    metric: "Phase 2 finalist",
-  },
-  {
-    index: "04",
     title: "AURELIA",
     period: "2026",
     blurb:
-      "A luxury fashion e-commerce platform built for the Google Build with AI 2026 workshop, deployed on Google Cloud Run.",
-    stack: ["Google Cloud Run", "Build with AI"],
-    metric: "Workshop build",
+      "A luxury fashion e-commerce platform built for Google Build with AI 2026 (GFG) — a React 19 and Tailwind 4 storefront with Gemini AI underneath, deployed on Google Cloud Run.",
+    stack: ["React 19", "Tailwind CSS 4", "Gemini AI", "Cloud Run"],
+    metric: "Google Build with AI 2026",
+    repo: "https://github.com/afaqulislam/aurelia",
+    live: "https://aurelia-luxury-450274679900.asia-southeast1.run.app",
+  },
+  {
+    index: "04",
+    title: "StartupLaunch AI",
+    period: "2026",
+    blurb:
+      "A swarm of specialised AI agents that run market research, competitor analysis, and risk assessment in parallel, then collapse their findings into a single evidence-backed Go / No-Go / Pivot verdict.",
+    stack: ["Next.js", "TypeScript", "Multi-agent", "LLM"],
+    metric: "Agent swarm · live",
+    repo: "https://github.com/afaqulislam/startuplaunch-ai",
+    live: "https://startuplaunchai-aui.vercel.app",
   },
   {
     index: "05",
-    title: "Personal AI Employee",
-    period: "2025",
+    title: "Folio Books",
+    period: "2026",
     blurb:
-      "An agentic personal assistant that actually persists: Obsidian for long-term memory, Python watchers for triggers, and a CLI reasoning engine on top. Gmail, WhatsApp, LinkedIn and social posting each run at a defined autonomy tier.",
-    stack: ["Python", "Obsidian", "Agentic workflows"],
-    metric: "GIAIC Hackathon 0",
+      "A curated digital library that runs entirely in the browser — no accounts, no backend round-trips, and no dependency on a server staying up for the shelf to load.",
+    stack: ["Next.js", "TypeScript", "Client-side"],
+    metric: "Live on Vercel",
+    repo: "https://github.com/afaqulislam/folio-books",
+    live: "https://folio-books-aui.vercel.app",
   },
   {
     index: "06",
+    title: "NovaSaaS",
+    period: "2026",
+    blurb:
+      "A conversion-focused SaaS landing page with a dark, high-contrast aesthetic, built so the read-through and the sign-up stay as frictionless as possible.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    metric: "Live on Vercel",
+    repo: "https://github.com/afaqulislam/NovaSaaS",
+    live: "https://novasaas-aui.vercel.app",
+  },
+  {
+    index: "07",
     title: "MORENT",
     period: "2025",
     blurb:
       "A car rental marketplace with smart filters, a booking calendar, and interactive charts. Next.js on the front, Sanity for content, Clerk for auth.",
     stack: ["Next.js", "Sanity CMS", "Clerk", "shadcn/ui"],
     metric: "GIAIC Hackathon 2025",
+    repo: "https://github.com/afaqulislam/Market-Builder-Hackathon-2025",
+    live: "https://aui-market-builder-hackathon-2025.vercel.app",
   },
   {
-    index: "07",
+    index: "08",
     title: "Taskory",
     period: "2025",
     blurb:
       "A task manager that accepts natural language instead of a form. Python backend with JWT authentication, real-time task updates, and pluggable AI providers.",
     stack: ["Python", "REST API", "JWT", "NLP"],
     metric: "Multi-provider AI",
+    repo: "https://github.com/afaqulislam/todo-full-stack-ai-chatbot-web-application",
+    live: "https://taskory-aui.vercel.app",
   },
   {
-    index: "08",
+    index: "09",
     title: "AUI Blogo",
     period: "2025",
     blurb:
       "A production dev blog with incremental static regeneration, a Sanity CMS back end, automatic table of contents, per-post SEO, and dark mode.",
     stack: ["Next.js 14", "ISR", "Sanity CMS", "Vercel"],
     metric: "Live on Vercel",
+    repo: "https://github.com/afaqulislam/AUI-Blogo",
+    live: "https://aui-blogo.vercel.app",
   },
   {
-    index: "09",
+    index: "10",
     title: "ChatAUI",
     period: "2025",
     blurb:
       "An enterprise-style conversational assistant built on Chainlit with the OpenAI Agents SDK, and OAuth 2.0 handled on the Python backend.",
     stack: ["Chainlit", "OpenAI Agents SDK", "OAuth 2.0"],
     metric: "Agents SDK · OAuth 2.0",
-  },
-  {
-    index: "10",
-    title: "25 Python Projects",
-    period: "2025",
-    blurb:
-      "Twenty-five production-ready Python builds — socket games, computer vision, assistants, REST APIs, full-stack integrations. Each one a standalone repository rather than a tutorial fork.",
-    stack: ["Python", "Sockets", "OpenCV", "REST"],
-    metric: "25 repositories",
+    repo: "https://github.com/afaqulislam/ChatAUI",
+    live: "https://afaqulislam-chataui.hf.space",
   },
 ] as const;
 

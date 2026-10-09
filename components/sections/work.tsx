@@ -34,19 +34,20 @@ export default function Work() {
 
                   <div className="md:col-span-6">
                     <h3 className="text-ink transition-colors duration-300 group-hover:text-brand">
-                      {project.href ? (
-                        <a href={project.href} className="inline-flex items-baseline gap-3">
-                          {title}
-                          <span
-                            aria-hidden="true"
-                            className="translate-y-[-0.1em] text-brand transition-transform duration-300 ease-editorial group-hover:animate-arrow-nudge motion-reduce:group-hover:animate-none"
-                          >
-                            ↗
-                          </span>
-                        </a>
-                      ) : (
-                        title
-                      )}
+                      <a
+                        href={project.live ?? project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-baseline gap-3"
+                      >
+                        {title}
+                        <span
+                          aria-hidden="true"
+                          className="translate-y-[-0.1em] text-brand transition-transform duration-300 ease-editorial group-hover:animate-arrow-nudge motion-reduce:group-hover:animate-none"
+                        >
+                          ↗
+                        </span>
+                      </a>
                     </h3>
 
                     <p className="mt-4 max-w-prose text-pretty text-[0.9375rem] leading-[1.7] text-ink-muted">
@@ -63,6 +64,27 @@ export default function Work() {
                         </li>
                       ))}
                     </ul>
+
+                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="sweep font-mono text-2xs uppercase tracking-micro text-ink-muted transition-colors duration-200 hover:text-brand"
+                      >
+                        Repository
+                      </a>
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="sweep font-mono text-2xs uppercase tracking-micro text-ink-muted transition-colors duration-200 hover:text-brand"
+                        >
+                          Live site
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   <div className="flex items-baseline justify-between gap-6 md:col-span-4 md:col-start-9 md:flex-col md:items-end md:justify-start md:text-right">

@@ -112,6 +112,14 @@ Recognition section, which share the same palette treatment.
 ## Project structure
 
 ```text
+next.config.ts       Next.js configuration
+tailwind.config.ts   Design tokens and the custom keyframe animations
+postcss.config.mjs   Tailwind and PostCSS pipeline
+tsconfig.json        TypeScript configuration and the @/ path alias
+.eslintrc.json       ESLint rules for app, components and lib
+package.json         Scripts and the four runtime dependencies
+package-lock.json    Locked dependency tree
+.gitignore           Ignored build output and editor files
 app/
   icon.svg             AUI mark — favicon, and the source of the logo
   opengraph-image.tsx  1200x630 social card, generated at build time

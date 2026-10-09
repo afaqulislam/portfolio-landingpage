@@ -21,8 +21,8 @@ function Asterisk({ className }: { className?: string }) {
 export default function Hero() {
   return (
     <section id="top" className="border-b border-rule">
-      <div className="shell pb-24 pt-20 sm:pt-28 lg:pb-32 lg:pt-36">
-        <div className="mt-7 flex flex-wrap items-baseline gap-x-4 gap-y-1 animate-rise-in sm:mt-8" style={{ animationDelay: "30ms" }}>
+      <div className="shell pb-20 pt-12 sm:pt-14 lg:pb-28 lg:pt-16">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 animate-rise-in" style={{ animationDelay: "30ms" }}>
           <p className="label">{profile.role}</p>
           <span aria-hidden="true" className="hidden h-3 w-px bg-rule-strong sm:block" />
           <p className="label text-ink-muted">{profile.roleSecondary}</p>
