@@ -1,6 +1,6 @@
 # Afaq Ul Islam — Portfolio Launch Film
 
-<video src="https://raw.githubusercontent.com/afaqulislam/portfolio-landingpage/main/docs/launch-film/launch-film.mp4" controls width="100%" muted loop autoplay playsinline></video>
+https://github.com/user-attachments/assets/65cfd841-5ccc-4650-82a0-755a699933fb
 
 **42 s · 1280×720 (rendered at 1920×1080) · 60 fps · original 104 BPM score · loops seamlessly**
 
