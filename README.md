@@ -11,6 +11,13 @@
 
 </div>
 
+<div align="center">
+  <a href="./docs/launch-film/launch-film.mp4">
+    <video src="./docs/launch-film/launch-film.mp4" width="860" muted loop autoplay playsinline></video>
+  </a>
+  <p><sub>Launch film — <a href="./docs/launch-film/">docs/launch-film</a> · 42 s · 104 BPM original score</sub></p>
+</div>
+
 ---
 
 An editorial portfolio built with **Next.js 15**, **React 19** and **Tailwind CSS** — warm paper
