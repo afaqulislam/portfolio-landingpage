@@ -12,10 +12,8 @@
 </div>
 
 <div align="center">
-  <a href="./docs/launch-film/launch-film.mp4">
-    <video src="./docs/launch-film/launch-film.mp4" width="860" muted loop autoplay playsinline></video>
-  </a>
-  <p><sub>Launch film — <a href="./docs/launch-film/">docs/launch-film</a> · 42 s · 104 BPM original score</sub></p>
+  <video src="./docs/launch-film/launch-film.mp4" width="860" controls muted loop autoplay playsinline></video>
+  <p><sub>Launch film · 42 s · 104 BPM original score</sub></p>
 </div>
 
 ---
