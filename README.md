@@ -12,7 +12,7 @@
 </div>
 
 <div align="center">
-  <video src="./docs/launch-film/launch-film.mp4" width="860" controls muted loop autoplay playsinline></video>
+  <video src="https://raw.githubusercontent.com/afaqulislam/portfolio-landingpage/main/docs/launch-film/launch-film.mp4" width="720" controls muted loop autoplay playsinline></video>
   <p><sub>Launch film · 42 s · 104 BPM original score</sub></p>
 </div>
 

@@ -1,8 +1,8 @@
 # Afaq Ul Islam — Portfolio Launch Film
 
-<video src="launch-film.mp4" controls width="100%" poster="" muted loop autoplay></video>
+<video src="https://raw.githubusercontent.com/afaqulislam/portfolio-landingpage/main/docs/launch-film/launch-film.mp4" controls width="100%" muted loop autoplay playsinline></video>
 
-**42 s · 1920×1080 · 60 fps · original 104 BPM score · loops seamlessly**
+**42 s · 1280×720 (rendered at 1920×1080) · 60 fps · original 104 BPM score · loops seamlessly**
 
 A landscape launch film for [portfolio-landingpage-aui.vercel.app](https://portfolio-landingpage-aui.vercel.app): the AUI mark opens the film and closes it, the real site runs inside a browser window on a laptop, ten projects scroll past, the Recognition band drops on bar 13, and the camera pulls back to the machine sitting on paper.
 
